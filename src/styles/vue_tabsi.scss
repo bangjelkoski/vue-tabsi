@@ -1,0 +1,47 @@
+.v-tabs {
+  overflow: hidden;
+
+  .v-tablist {
+    display: flex;
+    border-bottom: 1px solid #e2e7e6;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .v-tablist-tab {
+      margin: 0;
+      cursor: pointer;
+
+      span {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1rem;
+        opacity: 0.75;
+        justify-content: center;
+        padding: 1.5rem 1rem;
+        border-bottom: 1px solid transparent;
+      }
+
+      &[aria-selected='true'] {
+        span {
+          opacity: 1;
+          border-bottom: 1px solid #4299e1;
+        }
+      }
+    }
+  }
+
+  .v-tab-contents {
+    overflow-y: auto;
+  }
+
+  &.v-tabs-wide {
+    .v-tablist {
+      .v-tablist-tab {
+        flex: 1 1 0%;
+      }
+    }
+  }
+}

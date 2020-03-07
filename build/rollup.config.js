@@ -1,22 +1,27 @@
-import fs from 'fs'
-import path from 'path'
-import vue from 'rollup-plugin-vue'
-import alias from '@rollup/plugin-alias'
-import commonjs from '@rollup/plugin-commonjs'
-import replace from '@rollup/plugin-replace'
-import babel from 'rollup-plugin-babel'
-import { terser } from 'rollup-plugin-terser'
-import minimist from 'minimist'
+/* eslint-disable no-undef */
+import fs from 'fs';
+import path from 'path';
+import vue from 'rollup-plugin-vue';
+import alias from '@rollup/plugin-alias';
+import commonjs from '@rollup/plugin-commonjs';
+import replace from '@rollup/plugin-replace';
+import babel from 'rollup-plugin-babel';
+import { terser } from 'rollup-plugin-terser';
+import minimist from 'minimist';
+import css from 'rollup-plugin-css';
+import autoprefixer from 'autoprefixer';
+import postcss from 'postcss';
+import cssnano from 'cssnano';
 
 const esbrowserslist = fs
   .readFileSync('./.browserslistrc')
   .toString()
   .split('\n')
-  .filter((entry) => entry && entry.substring(0, 2) !== 'ie')
+  .filter((entry) => entry && entry.substring(0, 2) !== 'ie');
 
-const argv = minimist(process.argv.slice(2))
+const argv = minimist(process.argv.slice(2));
 
-const projectRoot = path.resolve(__dirname, '..')
+const projectRoot = path.resolve(__dirname, '..');
 
 const baseConfig = {
   input: 'src/index.js',
@@ -30,6 +35,13 @@ const baseConfig = {
         entries: {
           '@': path.resolve(projectRoot, 'src')
         }
+      }),
+      sass({
+        output: 'vue_tabsi.css',
+        processor: (css) =>
+          postcss([autoprefixer, cssnano])
+            .process(css)
+            .then((result) => result.css)
       })
     ],
     vue: {
@@ -43,15 +55,15 @@ const baseConfig = {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
     }
   }
-}
+};
 
-const external = ['vue']
+const external = ['vue'];
 
 const globals = {
   vue: 'Vue'
-}
+};
 
-const buildFormats = []
+const buildFormats = [];
 if (!argv.format || argv.format === 'es') {
   const esConfig = {
     ...baseConfig,
@@ -77,8 +89,8 @@ if (!argv.format || argv.format === 'es') {
       }),
       commonjs()
     ]
-  }
-  buildFormats.push(esConfig)
+  };
+  buildFormats.push(esConfig);
 }
 
 if (!argv.format || argv.format === 'cjs') {
@@ -105,8 +117,8 @@ if (!argv.format || argv.format === 'cjs') {
       babel(baseConfig.plugins.babel),
       commonjs()
     ]
-  }
-  buildFormats.push(umdConfig)
+  };
+  buildFormats.push(umdConfig);
 }
 
 if (!argv.format || argv.format === 'iife') {
@@ -132,8 +144,8 @@ if (!argv.format || argv.format === 'iife') {
         }
       })
     ]
-  }
-  buildFormats.push(unpkgConfig)
+  };
+  buildFormats.push(unpkgConfig);
 }
 
-export default buildFormats
+export default buildFormats;
