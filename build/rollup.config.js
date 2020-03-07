@@ -8,7 +8,7 @@ import replace from '@rollup/plugin-replace';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import minimist from 'minimist';
-import css from 'rollup-plugin-css';
+import sass from 'rollup-plugin-sass';
 import autoprefixer from 'autoprefixer';
 import postcss from 'postcss';
 import cssnano from 'cssnano';
@@ -37,7 +37,7 @@ const baseConfig = {
         }
       }),
       sass({
-        output: 'vue_tabsi.css',
+        output: 'dist/vue_tabsi.css',
         processor: (css) =>
           postcss([autoprefixer, cssnano])
             .process(css)
