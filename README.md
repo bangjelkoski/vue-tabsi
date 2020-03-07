@@ -4,7 +4,7 @@
 [![npm-version](https://img.shields.io/npm/v/vue-tabsi.svg)](https://www.npmjs.com/package/vue-tabsi)
 [![license](https://img.shields.io/npm/l/express.svg)]()
 
-> Convenient and easy way to implement Tabs, Tab lists and Tab Contents within your Vue apps.
+_Convenient and easy way to implement Tabs, Tab lists and Tab Contents within your Vue apps._
 
 ## ✨ Features
 
