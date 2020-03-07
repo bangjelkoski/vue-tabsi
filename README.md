@@ -77,7 +77,7 @@ export default {
 
 There are two components that are included within this package
 
-**Tabs Component `<v-tab></v-tab>`**
+**Tabs Component `<v-tabs></v-tabs>`**
 
 | Props           | Description                              | Type    | Required | Default       |
 | --------------- | ---------------------------------------- | ------- | -------- | ------------- |
@@ -96,7 +96,7 @@ And there is only one event on this component:
 
 ---
 
-**Tab Component `<v-tabs></v-tabs>`**
+**Tab Component `<v-tab></v-tab>`**
 
 | Props    | Description                | Type   | Required | Default |
 | -------- | -------------------------- | ------ | -------- | ------- |
