@@ -8,6 +8,11 @@
 
 ## ✨ Features
 
+- Easy to use
+- Unlimited number of tabs
+- Has some flexibility
+- You can include pre-defined styles or add your own
+
 ---
 
 ## 📚 Getting Started
@@ -20,9 +25,80 @@ $ npm install vue-tabsi
 
 ## 🚀 Usage
 
-```vue
+1. Using the components build the desired tabs structure. Using the `v-model` on the `<v-tabs>` component change the current tab shown however you want.
+2. Add all of the `<v-tabs>` within the `<v-tabs>` component and assign a `label` to them that will be used in the tab list for the corresponding tab.
+3. Add the content to each of the `<v-tabs>` as desired,
+4. You are good to go! 🏭
 
+> Example usage within a component
+
+```vue
+<template>
+  <div id="app">
+    <v-tabs v-model="currentTabIndex">
+      <v-tab label="First Tab">
+        <p>
+          Hello from the First Tab.
+        </p>
+      </v-tab>
+      <v-tab label="Second Tab">
+        <p>
+          Hello from the Second Tab.
+        </p>
+      </v-tab>
+    </v-tabs>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue';
+import { VTab, VTabs } from 'vue-tabsi';
+
+export default {
+  components: {
+    VTabs,
+    VTab
+  },
+
+  tabs: {
+    firstTab: 0,
+    secondTab: 1
+  },
+
+  data() {
+    return {
+      currentTabIndex: this.$options.tabs.firstTab
+    };
+  }
+};
+</script>
 ```
+
+## 📖 Documentation
+
+There are two components that are included within this package
+
+#### Tabs Component `<v-tab></v-tab>`
+
+| Props           | Description                              | Type    | Required | Default       |
+| --------------- | ---------------------------------------- | ------- | -------- | ------------- |
+| currentIndex    | The current tab index                    | Integer | true     | -             |
+| tabsClass       | Class of the root element                | String  | false    | v-tabs        |
+| tabListClass    | Class of the tab list element            | String  | false    | v-tablist     |
+| tabListTabClass | Class of the tab element in the tab list | String  | false    | v-tablist-tab |
+| tabActiveClass  | Class of the tab list element            | String  | false    | v-tab-active  |
+| wide            | Wether to expand tablist to full width   | Boolean | false    | false         |
+
+| Event  | Description           | Payload                       |
+| ------ | --------------------- | ----------------------------- |
+| change | When a tab is changed | Number [Index of the new tab] |
+
+#### Tab Component `<v-tabs></v-tabs>`\*\*
+
+| Props    | Description                | Type   | Required | Default |
+| -------- | -------------------------- | ------ | -------- | ------- |
+| label    | Label used in the tab list | String | true     | -       |
+| tabClass | Class of the root element  | String | false    | v-tab   |
 
 ---
 
