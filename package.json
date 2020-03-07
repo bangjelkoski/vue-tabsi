@@ -53,5 +53,9 @@
   "engines": {
     "node": ">=8"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bangjelkoskii/vue-tabsi.git"
+  },
   "license": "MIT"
 }
