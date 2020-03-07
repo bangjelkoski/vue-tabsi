@@ -73,6 +73,18 @@ export default {
 </script>
 ```
 
+You can also install the plugin and its sample styles and have these components globally available within all of your vue components. 
+
+```vue
+import Vue from 'vue';
+import VueTabsi from 'vue-tabsi';
+import 'vue-tabsi/dist/vue_tabsi.css';
+
+Vue.use(VueTabsi);
+```
+
+You can now use `<v-tabs>` and `<v-tab>` components anywhere in your Vue app.
+
 ## 📖 Documentation
 
 There are two components that are included within this package
