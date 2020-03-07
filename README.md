@@ -30,9 +30,8 @@ $ npm install vue-tabsi
 3. Add the content to each of the `<v-tabs>` as desired,
 4. You are good to go! 🏭
 
-> Example usage within a component
-
 ```vue
+// Example usage within a component
 <template>
   <div id="app">
     <v-tabs v-model="currentTabIndex">
@@ -78,7 +77,7 @@ export default {
 
 There are two components that are included within this package
 
-#### Tabs Component `<v-tab></v-tab>`
+**Tabs Component `<v-tab></v-tab>`**
 
 | Props           | Description                              | Type    | Required | Default       |
 | --------------- | ---------------------------------------- | ------- | -------- | ------------- |
@@ -89,11 +88,15 @@ There are two components that are included within this package
 | tabActiveClass  | Class of the tab list element            | String  | false    | v-tab-active  |
 | wide            | Wether to expand tablist to full width   | Boolean | false    | false         |
 
+And there is only one event on this component:
+
 | Event  | Description           | Payload                       |
 | ------ | --------------------- | ----------------------------- |
 | change | When a tab is changed | Number [Index of the new tab] |
 
-#### Tab Component `<v-tabs></v-tabs>`\*\*
+---
+
+**Tab Component `<v-tabs></v-tabs>`**
 
 | Props    | Description                | Type   | Required | Default |
 | -------- | -------------------------- | ------ | -------- | ------- |
