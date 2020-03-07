@@ -3,18 +3,12 @@
     <v-tabs v-model="currentTabIndex">
       <v-tab label="First Tab">
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt labore
-          ab doloribus consequuntur voluptatibus neque corporis ratione, ipsa
-          porro modi ut quo dignissimos, aspernatur consequatur adipisci tempora
-          officia officiis cum.
+          Hello from the First Tab.
         </p>
       </v-tab>
       <v-tab label="Second Tab">
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt labore
-          ab doloribus consequuntur voluptatibus neque corporis ratione, ipsa
-          porro modi ut quo dignissimos, aspernatur consequatur adipisci tempora
-          officia officiis cum.
+          Hello from the Second Tab.
         </p>
       </v-tab>
     </v-tabs>
@@ -22,8 +16,8 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { VTab, VTabs } from '@/entry'
+import Vue from 'vue';
+import { VTab, VTabs } from '@/index';
 
 export default Vue.extend({
   name: 'Development',
@@ -34,14 +28,14 @@ export default Vue.extend({
   },
 
   tabs: {
-    openOrders: 0,
-    filledOrders: 1
+    firstTab: 0,
+    secondTab: 1
   },
 
   data() {
     return {
-      currentTabIndex: this.$options.tabs.openOrders
-    }
+      currentTabIndex: this.$options.tabs.firstTab
+    };
   }
-})
+});
 </script>

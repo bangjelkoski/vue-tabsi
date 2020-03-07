@@ -4,7 +4,7 @@
   "description": "Convenient and easy way to implement Tabs, Tab lists and Tab Contents within your Vue apps.",
   "author": "Bojan Angjelkoski <bangjelkoskii@gmail.com>",
   "scripts": {
-    "serve": "vue-cli-service serve src/serve-dev.js",
+    "serve": "vue-cli-service serve src/dev.js",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "lint": "vue-cli-service lint",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
