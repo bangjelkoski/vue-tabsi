@@ -6,6 +6,8 @@
 
 _Convenient and easy way to implement Tabs, Tab lists and Tab Contents within your Vue apps._
 
+[Demo](https://bangjelkoski.github.io/vue-tabsi/) _\*the code used is in the Example below_
+
 ## ✨ Features
 
 - Easy to use
@@ -73,9 +75,9 @@ export default {
 </script>
 ```
 
-You can also install the plugin and its sample styles and have these components globally available within all of your vue components. 
+You can also install the plugin and its sample styles and have these components globally available within all of your vue components.
 
-```vue
+```javascript
 import Vue from 'vue';
 import VueTabsi from 'vue-tabsi';
 import 'vue-tabsi/dist/vue_tabsi.css';

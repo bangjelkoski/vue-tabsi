@@ -1,6 +1,6 @@
 {
   "name": "vue-tabsi",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Convenient and easy way to implement Tabs, Tab lists and Tab Contents within your Vue apps.",
   "author": "Bojan Angjelkoski <bangjelkoskii@gmail.com>",
   "scripts": {
